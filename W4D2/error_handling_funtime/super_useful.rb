@@ -1,6 +1,6 @@
 # PHASE 2
 require "byebug"
-class ConversionError < StandardError
+class Custom < ArgumentError
   def message 
     "convert an error"
   end
@@ -12,7 +12,7 @@ def convert_to_int(str)
   # debugger
   begin
   int = Integer(str)
-  rescue ArgumentError
+  rescue Custom
     puts "Arg"
   rescue TypeError
     puts "Type"
@@ -22,8 +22,8 @@ def convert_to_int(str)
   end
 end
 
-# p convert_to_int("1")
-# p convert_to_int("a")
+p convert_to_int("1")
+p convert_to_int("a")
 # p convert_to_int([1])
 # p convert_to_int({"a"=>1})
 # p convert_to_int(nil)

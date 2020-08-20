@@ -58,5 +58,5 @@ render_test = Render.new(test)
 while true
   moves = render_test.find_input
   render_test.board.move_piece(*moves)
-  puts "uh oh" if render_test.board.in_check?(:white)
+  # puts "uh oh" if render_test.board.in_check?(:white) #testing
 end

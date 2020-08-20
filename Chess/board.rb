@@ -62,8 +62,12 @@ class Board
   def in_check?(color)
     kings_position = nil
     @kings.each { |king| kings_position = king.pos if king.color == color}
-    grid.each do |row|
+    p kings_position
+    self.grid.each do |row|
+      p row
       row.each do |piece|
+        p piece
+        next if piece == NullPiece.instance
         if piece.enemy_color == color
           piece.move.each { |move| return true if kings_position == move}
         end
@@ -97,16 +101,6 @@ class Board
     grid[pos[0]][pos[1]]
   end
 
-  def render
-    rendered = self.grid
-    rendered.each_with_index do |row, i|
-      var = ""
-      row.each_with_index do |piece, i|
-        var += "#{piece.symbol} "
-      end
-      puts var
-    end
-  end
   
 end
 

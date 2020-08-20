@@ -16,6 +16,6 @@ class King < Piece
             [-1, 1],
             [-1,-1]
         ]
-        super(board, pos, :K, color)
+        super(board, pos, "♔", color)
     end 
 end

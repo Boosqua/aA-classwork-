@@ -6,7 +6,7 @@ class Bishop < Piece
   attr_reader :moveset, :color
   def initialize(board, pos, color)
     @color = color
-    super(board, pos, :B, color)
+    super(board, pos, "♗", color)
     @move_set = [[1,1],[1,-1],[-1,1],[-1,-1]]
   end
 end

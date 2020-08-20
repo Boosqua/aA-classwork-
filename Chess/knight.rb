@@ -7,7 +7,7 @@ class Knight < Piece
     def initialize(board, pos, color)
       @color = color
       @moveset = [[-2, -1], [-2,  1], [-1, -2], [-1,  2], [ 1, -2], [ 1,  2], [ 2, -1], [ 2,  1]]
-      super(board, pos, :k, color)
+      super(board, pos, "♘", color)
     end
 end
 

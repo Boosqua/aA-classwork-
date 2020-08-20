@@ -7,7 +7,7 @@ class Queen < Piece
 
   def initialize(board, pos, color)
     @color
-    super(board, pos, :Q, color)
+    super(board, pos, "♕", color)
     @moveset = [[1, 1], [1, -1], [1, 0], [0, 1], [0, -1],[-1, 0], [-1, 1], [-1, -1]]
   end
 end

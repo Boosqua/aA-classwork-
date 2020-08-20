@@ -7,7 +7,7 @@ class Rook < Piece
     def initialize(board, pos, color)
       @color = color
       @moveset = [[1, 0], [0, 1], [-1, 0], [0, -1]]
-      super(board, pos, :R, color)
+      super(board, pos, "♖", color)
     end
 end
 

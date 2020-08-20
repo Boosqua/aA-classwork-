@@ -8,7 +8,7 @@ class Pawn < Piece
     @color = color
     @direction = direction
     @attack_move = [1, -1]
-    super(board, pos, :p, color)
+    super(board, pos, "♙", color)
     @start_position = true
   end
 

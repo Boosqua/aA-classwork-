@@ -19,11 +19,11 @@ class Render < Cursor
         current_choice = [i, j] == @cursor.cursor_pos ? :cursor : choice 
         # current_choice = :yellow unless chosen.nil? || [i, j] == @cursor.cursor_pos
         if spot == NullPiece.instance
-          print "   ".colorize( :background => background[current_choice])
+          print "    ".colorize( :background => background[current_choice])
         else
           color = spot.color
           sym = spot.symbol
-          print " #{sym} ".colorize( :color => color, :background => background[current_choice] )
+          print " #{sym}  ".colorize( :color => color, :background => background[current_choice] )
         end
       end
       choice *= -1

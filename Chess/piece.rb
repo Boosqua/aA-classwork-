@@ -10,15 +10,8 @@ class Piece
       @color = color
   end
 
-  # class Sliding pieces (Bishop, Rook, Queen) (:B, :R, :Q)
-  # class Stepping pieces (Knight, King) (:Kn, :Ki)
-  # class Null pieces (occupy the 'empty' spaces) (:)n)
-  # class Pawns (:P)
-  # def inspect
-  #   @symbol.inspect
-  # end
 
-  def move # return arr of moves of a piece
+  def move 
     
   end
   def enemy_color

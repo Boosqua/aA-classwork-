@@ -97,7 +97,6 @@ class Board
   end
 
   def [](pos)
-    
     grid[pos[0]][pos[1]]
   end
 

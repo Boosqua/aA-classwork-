@@ -1,0 +1,12 @@
+<h1> Create Kitteh Person </h1>
+
+<form action="<%= users_url %>" method="POST">
+<label for="Username" > Username: 
+<input type="text" name="user[username]" id="Username" value="<%= @user.username %>">
+</label>
+<label for="Password">
+Password:
+<input type="password" name="user[password]" id="Password" value="">
+</label>
+<input type="submit" value="squish dat kitteh">
+</form>

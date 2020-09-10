@@ -1,0 +1,447 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20200910184109)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar NOT NULL, "password_digest" varchar NOT NULL, "session_token" varchar NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200910184109_create_users.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_session_token" ON "users" ("session_token")[0m
+  ↳ db/migrate/20200910184109_create_users.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")[0m
+  ↳ db/migrate/20200910184109_create_users.rb:11
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200910184109"]]
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-10 18:43:57.386932"], ["updated_at", "2020-09-10 18:43:57.386932"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/omarhernandez/.rbenv/versions/2.5.1/bin/annotate:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Hulk"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "aFDdLUtz_btttNhtNGOgqw"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Hulk"], ["password_digest", "$2a$12$YhS50qeKK/AcBYxhkgHMMe7eWi/CjC68TbTuIGfKUDURvOnAzUcb."], ["session_token", "aFDdLUtz_btttNhtNGOgqw"], ["created_at", "2020-09-10 19:06:23.259216"], ["updated_at", "2020-09-10 19:06:23.259216"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Carol Botsford"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "p7gtP3ohUeukEbHKTNTk6g"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Carol Botsford"], ["password_digest", "$2a$12$FewyZlK57mtyIF2NGToNdu2mbku6IUDuRZYzCoJS0iuZf5cWlq0C2"], ["session_token", "p7gtP3ohUeukEbHKTNTk6g"], ["created_at", "2020-09-10 21:11:32.526033"], ["updated_at", "2020-09-10 21:11:32.526033"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Hyman Thompson"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "SyWNaQ--BqTVWWsh_V9dqg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Hyman Thompson"], ["password_digest", "$2a$12$8lwZD.ksEQBQPAOfyCCFve1W/tyjuTU2kwQN/CVflF/0bYKBCtBWS"], ["session_token", "SyWNaQ--BqTVWWsh_V9dqg"], ["created_at", "2020-09-10 21:11:32.802094"], ["updated_at", "2020-09-10 21:11:32.802094"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Catherin Lakin"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "beX06m7R8T6XwMnbx2maYQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Catherin Lakin"], ["password_digest", "$2a$12$s1d5ypGwPy1p5rzQ.rZ9h.VTqpFlDFeQNg2Ar5r9ufjYwYNcaFIFC"], ["session_token", "beX06m7R8T6XwMnbx2maYQ"], ["created_at", "2020-09-10 21:11:33.068830"], ["updated_at", "2020-09-10 21:11:33.068830"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Weldon Gerlach"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "1ZeBIHrrKHfbX8-tFrUEtg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Weldon Gerlach"], ["password_digest", "$2a$12$po48bAQ0MbGnbpnG3TUIPOpncJTQIFlJbfmnROQPp9MrV0m1hEISO"], ["session_token", "1ZeBIHrrKHfbX8-tFrUEtg"], ["created_at", "2020-09-10 21:11:33.336948"], ["updated_at", "2020-09-10 21:11:33.336948"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Josiah Hirthe IV"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "IH6OYRkE6WEJ_eYlj1diWg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Josiah Hirthe IV"], ["password_digest", "$2a$12$oEdoRiUCk4lYMMMvi0qZkOS.J2meXBbGNghJD2CNItBWhJyMwINum"], ["session_token", "IH6OYRkE6WEJ_eYlj1diWg"], ["created_at", "2020-09-10 21:11:33.613387"], ["updated_at", "2020-09-10 21:11:33.613387"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lourie Crooks PhD"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "ED-_QhAZuFbNk1wlWTJvOQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Lourie Crooks PhD"], ["password_digest", "$2a$12$flTmHRX2WbosIqWEPdBSjuwnqd9G2fi.yOyo1FOrtHgXhv09e/wW."], ["session_token", "ED-_QhAZuFbNk1wlWTJvOQ"], ["created_at", "2020-09-10 21:11:33.881648"], ["updated_at", "2020-09-10 21:11:33.881648"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Mark Harris"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "JBGKMaJnlAfwqh0ep7gLQw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Mark Harris"], ["password_digest", "$2a$12$w2aF.YK1bKssQ6dJlIK3eeCBYjhgV/5jW6oRs9nt1QUvaCjqO74j."], ["session_token", "JBGKMaJnlAfwqh0ep7gLQw"], ["created_at", "2020-09-10 21:11:34.148792"], ["updated_at", "2020-09-10 21:11:34.148792"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Dinah Stiedemann"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "f80hp1eyPsrNJ-d16n0bDA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Dinah Stiedemann"], ["password_digest", "$2a$12$ED8BcE3MdQuw0XccGTEyCexVx./yEY8w1uISk.Roi84DPhYb7Xw.u"], ["session_token", "f80hp1eyPsrNJ-d16n0bDA"], ["created_at", "2020-09-10 21:11:34.415584"], ["updated_at", "2020-09-10 21:11:34.415584"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Sally Cummerata"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "CcyGkRcQ-dTVE3fneo_aww"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Sally Cummerata"], ["password_digest", "$2a$12$Cy/QeRBWOw2OrhCCqMs9w.NFxZ473FLjVWXXmOB2ZptLtCYXKpaLe"], ["session_token", "CcyGkRcQ-dTVE3fneo_aww"], ["created_at", "2020-09-10 21:11:34.683718"], ["updated_at", "2020-09-10 21:11:34.683718"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Alton Hudson"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "xpNZV8hjTKWg1fzyzyfaTQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Alton Hudson"], ["password_digest", "$2a$12$WrIMxHLVxplyAS/0LN7wvuoCNIcTfr3tKgyKw.vPFO63RrDVtbwwu"], ["session_token", "xpNZV8hjTKWg1fzyzyfaTQ"], ["created_at", "2020-09-10 21:11:34.953310"], ["updated_at", "2020-09-10 21:11:34.953310"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Yulanda Klocko DVM"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "TD3p9md90O8ePFxE-BP38w"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Yulanda Klocko DVM"], ["password_digest", "$2a$12$vgoonYNfrsRjUjwzSQEZmeIJsFbMHpTY5sX9kn0Gn/9.kGo5X178W"], ["session_token", "TD3p9md90O8ePFxE-BP38w"], ["created_at", "2020-09-10 21:11:35.222791"], ["updated_at", "2020-09-10 21:11:35.222791"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Carmina Stokes Sr."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "DTERebFxXzKs3pfGi8F1oQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Carmina Stokes Sr."], ["password_digest", "$2a$12$MU6v1sJryM4g1NdiwTF2P.scF99B1KCmf7p0rrK6H8ZeUWkqGGFUC"], ["session_token", "DTERebFxXzKs3pfGi8F1oQ"], ["created_at", "2020-09-10 21:11:35.497705"], ["updated_at", "2020-09-10 21:11:35.497705"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Diamond Welch V"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "80Qa96raCKC3vy1wXL8DBw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Diamond Welch V"], ["password_digest", "$2a$12$SztQyV3.h3gWbzMv264uSussVd18HiIz1OLCJk7YfGDgD4X/7tAMi"], ["session_token", "80Qa96raCKC3vy1wXL8DBw"], ["created_at", "2020-09-10 21:11:35.764140"], ["updated_at", "2020-09-10 21:11:35.764140"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Samual Kemmer V"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "7zzy55Ag7Hp8Gl_MtyrR7A"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Samual Kemmer V"], ["password_digest", "$2a$12$qgMooO9Rs2Cqn3qYSeS8uuADyy7AkrLthwJUk8O0hIugEbOA5NYKC"], ["session_token", "7zzy55Ag7Hp8Gl_MtyrR7A"], ["created_at", "2020-09-10 21:11:36.053324"], ["updated_at", "2020-09-10 21:11:36.053324"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Catherina Hand"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "ghKchZgrF-ngc6dP4AGB7g"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Catherina Hand"], ["password_digest", "$2a$12$PPfqU6Sn7S9ExF/6yOPrr.2uINo6OD/UMAln3Jo8nAXq5DuD//bD6"], ["session_token", "ghKchZgrF-ngc6dP4AGB7g"], ["created_at", "2020-09-10 21:11:36.336154"], ["updated_at", "2020-09-10 21:11:36.336154"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Dionne Dickens"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "QrMuV6UDzg-E5vB_-JDCkA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Dionne Dickens"], ["password_digest", "$2a$12$kihg68qAwcodInHsBclTrucTi18H8QTFPVr2XotfNSvRkFKNV9bwW"], ["session_token", "QrMuV6UDzg-E5vB_-JDCkA"], ["created_at", "2020-09-10 21:11:36.624599"], ["updated_at", "2020-09-10 21:11:36.624599"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Haywood Paucek"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "4Jr_o81_TfHDbC5I9Zd20Q"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Haywood Paucek"], ["password_digest", "$2a$12$VHfcYC06psa74ms7wSMBdOgryHqJ287rtH.xofHD2RvnxqNX7z97C"], ["session_token", "4Jr_o81_TfHDbC5I9Zd20Q"], ["created_at", "2020-09-10 21:11:36.909394"], ["updated_at", "2020-09-10 21:11:36.909394"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Angelyn Marks"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "auputEiNjjM14X3Jfs-9Kg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Angelyn Marks"], ["password_digest", "$2a$12$Yojth13NI7FHERXinttleetgP.nXr0qLJdXKxUh7Fyxh8C9cuqVqG"], ["session_token", "auputEiNjjM14X3Jfs-9Kg"], ["created_at", "2020-09-10 21:11:37.189110"], ["updated_at", "2020-09-10 21:11:37.189110"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jodee McLaughlin"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "vXdN0LMuQx_UFaiwmm7aoQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Jodee McLaughlin"], ["password_digest", "$2a$12$Fpa6oXUsrSb.P2elQDu2pevwKM0BHR4ZJJ7Wpc.Dhk9XUGK49ktSy"], ["session_token", "vXdN0LMuQx_UFaiwmm7aoQ"], ["created_at", "2020-09-10 21:11:37.456659"], ["updated_at", "2020-09-10 21:11:37.456659"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "The Hon. Jasmine West"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "YEoE1U6vOloWCo2zX2qG4w"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "The Hon. Jasmine West"], ["password_digest", "$2a$12$1Yc8s8IuN20Hibb5o0A6MOIiEISI9/SkiMwPQ2pLyF91J.GKFCJqq"], ["session_token", "YEoE1U6vOloWCo2zX2qG4w"], ["created_at", "2020-09-10 21:11:37.723499"], ["updated_at", "2020-09-10 21:11:37.723499"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Gov. Allen Feest"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "zwIZcbSurzcIDoD3Zd_pAA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Gov. Allen Feest"], ["password_digest", "$2a$12$LDlEGm81iFinaF/J12Ipje58DbdyHZB3W3ZLs0mnDBFHF9pDvvZSS"], ["session_token", "zwIZcbSurzcIDoD3Zd_pAA"], ["created_at", "2020-09-10 21:14:36.200991"], ["updated_at", "2020-09-10 21:14:36.200991"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Adrian Schimmel Sr."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "ExGT9E1KaPndpkb7wBs_Yg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Adrian Schimmel Sr."], ["password_digest", "$2a$12$HqY33zzca7gw5XMiaW14Y.piXNcqJHJjD.ZVMj1Jvn5hzwzrk5.n."], ["session_token", "ExGT9E1KaPndpkb7wBs_Yg"], ["created_at", "2020-09-10 21:14:36.467052"], ["updated_at", "2020-09-10 21:14:36.467052"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Reta Herzog LLD"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "qBeyS1mULKvh8qc5ZdOLOw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Reta Herzog LLD"], ["password_digest", "$2a$12$pq5yD/YmacD7jZ2obv7.7evCuuAkA5aVJ2mh2EzzQHcKbu9jrD0qK"], ["session_token", "qBeyS1mULKvh8qc5ZdOLOw"], ["created_at", "2020-09-10 21:14:36.737333"], ["updated_at", "2020-09-10 21:14:36.737333"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Delbert D'Amore"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "eFhjr9L_heumcNCUcluyPg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Delbert D'Amore"], ["password_digest", "$2a$12$jKcrQlN5/7DTV55l9nM/Qewxfl4.Fna1fxiDsbIUL4xtalVrjfyGi"], ["session_token", "eFhjr9L_heumcNCUcluyPg"], ["created_at", "2020-09-10 21:14:37.003999"], ["updated_at", "2020-09-10 21:14:37.003999"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Msgr. Loriann Friesen"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "o3Jnnd1uURiIneqEYrYhlA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Msgr. Loriann Friesen"], ["password_digest", "$2a$12$8f6HoDFb3GsoucPoPqxO2e4KLcSjQywPznvjOEgkCV1/BH1oqXfQC"], ["session_token", "o3Jnnd1uURiIneqEYrYhlA"], ["created_at", "2020-09-10 21:14:37.270981"], ["updated_at", "2020-09-10 21:14:37.270981"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Annette Kunze DC"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "Vx89UJbUjcZMQlp-ZU2GwA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Annette Kunze DC"], ["password_digest", "$2a$12$YnO1GPtUrEg1fCkg6reifeuWssJGVXdn6wN6FPDhDMRDKMHTrjQA2"], ["session_token", "Vx89UJbUjcZMQlp-ZU2GwA"], ["created_at", "2020-09-10 21:14:37.538136"], ["updated_at", "2020-09-10 21:14:37.538136"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jessica Stiedemann V"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "5h4RXrcDBEhQIGzFHBKDew"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Jessica Stiedemann V"], ["password_digest", "$2a$12$Wo5AnuCWIEMCma4.40ttau1jmYbY9wGR29BJC6CbKZ3XKukSWYrbO"], ["session_token", "5h4RXrcDBEhQIGzFHBKDew"], ["created_at", "2020-09-10 21:14:37.803233"], ["updated_at", "2020-09-10 21:14:37.803233"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Sen. Romeo Nolan"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "fCPF2RvdFftdjwLC303YSw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Sen. Romeo Nolan"], ["password_digest", "$2a$12$QRgSDyhgegkMKBjNT8jIY.xPcRviHG/ilUj4.vdH9.Um0Gj.9u1oS"], ["session_token", "fCPF2RvdFftdjwLC303YSw"], ["created_at", "2020-09-10 21:14:38.073416"], ["updated_at", "2020-09-10 21:14:38.073416"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Ms. Gerald Hackett"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "dkGbcy5NvIp-HsBG6XGxEQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Ms. Gerald Hackett"], ["password_digest", "$2a$12$R6pApsv9p73GyOB/xGfl6ei55p8dhVM9tb5Y.vD622WDDxvimUYuS"], ["session_token", "dkGbcy5NvIp-HsBG6XGxEQ"], ["created_at", "2020-09-10 21:14:38.344337"], ["updated_at", "2020-09-10 21:14:38.344337"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Cammy Pagac"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "cOgvewpFvtFM8g3eNABMyw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Cammy Pagac"], ["password_digest", "$2a$12$sguv/9n5GLQGkEmZyTQy3eUS.pjDmqSmuAqQLWRnuYfhEykwIgav2"], ["session_token", "cOgvewpFvtFM8g3eNABMyw"], ["created_at", "2020-09-10 21:14:38.615754"], ["updated_at", "2020-09-10 21:14:38.615754"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Romaine Farrell DC"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "w4V61bEmzKnSqqtU60jQhA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Romaine Farrell DC"], ["password_digest", "$2a$12$VqpDj2IV6uO8T71AVzweFeJvpN0D0YAYCn.5DiMS34YN4ZufmnCHO"], ["session_token", "w4V61bEmzKnSqqtU60jQhA"], ["created_at", "2020-09-10 21:14:38.885524"], ["updated_at", "2020-09-10 21:14:38.885524"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Renay Medhurst I"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "eOqH8DvoECUQ0kaKTiSnKA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Renay Medhurst I"], ["password_digest", "$2a$12$v64oCFnNhpf9uLjFyedOguQgW4nIVGe586aK6SE0Pcu5w3/kl28tm"], ["session_token", "eOqH8DvoECUQ0kaKTiSnKA"], ["created_at", "2020-09-10 21:14:39.156518"], ["updated_at", "2020-09-10 21:14:39.156518"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lena Heidenreich"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "_9ZsADb9M5Ezrb8aGGICBA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Lena Heidenreich"], ["password_digest", "$2a$12$mBsOJtbJTidREr3//kePp.zqbgP/591X21WY0ASoghV1O1j0tFCJS"], ["session_token", "_9ZsADb9M5Ezrb8aGGICBA"], ["created_at", "2020-09-10 21:14:39.429818"], ["updated_at", "2020-09-10 21:14:39.429818"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Joesph Padberg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "nAK4Jm2j_d02BdrWkunfMA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Joesph Padberg"], ["password_digest", "$2a$12$Hp6BcspytBorVJooH8vcKe14SO8hL/EBKKhkhHQF5.PSDTmH6ljTa"], ["session_token", "nAK4Jm2j_d02BdrWkunfMA"], ["created_at", "2020-09-10 21:14:39.697758"], ["updated_at", "2020-09-10 21:14:39.697758"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Joycelyn Robel Jr."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "AAKfHcfEIZtW2_7upz6Bzg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Joycelyn Robel Jr."], ["password_digest", "$2a$12$ySX1IFoYM3EHEwIvfUNd2e4mMxxbMKxCsVWHBI1if8vZyfT/09wnu"], ["session_token", "AAKfHcfEIZtW2_7upz6Bzg"], ["created_at", "2020-09-10 21:14:39.968815"], ["updated_at", "2020-09-10 21:14:39.968815"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Miles Schoen"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "RSRibAjw29STphW5PJsKiQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Miles Schoen"], ["password_digest", "$2a$12$yFNx4cgm5iq/.LfAWqkZu.sSDQoRJZiU2aUL4oDSzV1V0W5dkCS4C"], ["session_token", "RSRibAjw29STphW5PJsKiQ"], ["created_at", "2020-09-10 21:14:40.243081"], ["updated_at", "2020-09-10 21:14:40.243081"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Andria Shanahan"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "CFZdeyxvFd1CgBnohZJyYA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Andria Shanahan"], ["password_digest", "$2a$12$RIjgYgYe32b6tfLmDLgpO.TAeuiNx5nZQmgT1FoUuWA8BIKyZa7/W"], ["session_token", "CFZdeyxvFd1CgBnohZJyYA"], ["created_at", "2020-09-10 21:14:40.513019"], ["updated_at", "2020-09-10 21:14:40.513019"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Trevor Conroy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "hJwpuXNw8CyWRXRIwJNMxg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Trevor Conroy"], ["password_digest", "$2a$12$rhY1VwBm3Di3BgtsoHjZLeOcfHuW9BIemVVPaUXuk3GxVR4NLNwFW"], ["session_token", "hJwpuXNw8CyWRXRIwJNMxg"], ["created_at", "2020-09-10 21:14:40.780194"], ["updated_at", "2020-09-10 21:14:40.780194"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Juan Willms"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "_UDGtpEhiU1BwSTSnrZ0tA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Juan Willms"], ["password_digest", "$2a$12$zW5SnNNivjiKfRXpsEuUfOF6e/149bXtbfsD7rwxMJUrUxb2CSM8C"], ["session_token", "_UDGtpEhiU1BwSTSnrZ0tA"], ["created_at", "2020-09-10 21:14:41.049921"], ["updated_at", "2020-09-10 21:14:41.049921"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lillia Kerluke"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "gqyvMj4YsJeIF5YsBz2hdw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Lillia Kerluke"], ["password_digest", "$2a$12$cng7RSzEXIE2YqjCYdzJCeqIdOMqGF3caOweVxLkBC.7xrmavvekq"], ["session_token", "gqyvMj4YsJeIF5YsBz2hdw"], ["created_at", "2020-09-10 21:14:41.320193"], ["updated_at", "2020-09-10 21:14:41.320193"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10

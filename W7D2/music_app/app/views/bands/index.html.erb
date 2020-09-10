@@ -1,0 +1,7 @@
+<h1> Da Bands </h1>
+<a href="<%= new_band_url %>"> Would you like to create a new band?? </a>
+    <ul>
+        <% @bands.each do |band| %>
+            <li> <%=  band.name  %> </li>
+        <% end %>
+    </ul>

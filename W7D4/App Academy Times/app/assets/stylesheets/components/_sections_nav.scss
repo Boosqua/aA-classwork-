@@ -1,0 +1,21 @@
+
+.section-nav li:hover {
+    background-color: $light-gray; 
+}
+
+.section-nav li:last-child:hover {
+    border-bottom: 1px solid black;
+}
+
+.section-nav {
+    display: flex;
+    border-bottom: 1px solid $light-gray;
+    justify-content: center;
+    position: relative;
+}
+
+.section-nav li {
+    // margin-left: 10px;
+    // margin-right: 10px;
+    margin: 10px;
+}

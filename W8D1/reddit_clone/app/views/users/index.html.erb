@@ -1,0 +1,7 @@
+<h1>So Many Weebs </h1>
+<br>
+<% @users.each do |user| %>
+    <a href="<%= user_url(user.id) %>" method="POST">
+    <input type="hidden" name="_method" value="GET">
+    <%= user.username.upcase %></a>
+<% end %>

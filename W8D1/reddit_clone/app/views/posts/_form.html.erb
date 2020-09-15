@@ -1,0 +1,26 @@
+<% if type == :new %>
+    <% action_url = sub_posts_url(sub_id) %>
+    <% button_value = "create post"%>
+<% else %>
+    <% action_url = sub_post_url %>
+    <%  button_value = "update post"%>
+<% end %>
+<form action="<%= action_url %>" method="POST">
+<br> <%  %>
+    <% if type == :edit %>
+        <input type="hidden" name="_method" value="PATCH">
+        <% end %>
+        <input type="hidden" name="post[url]" value="sajkdhaskjdh">
+        <input type="hidden" 
+            name="authenticity_token" 
+            value="<%=form_authenticity_token%>">
+        <label> title
+            <input type="text" name="post[title]">
+        </label>
+
+        <label> content
+            <input type="text" name="post[content]">
+        </label>
+        <br>
+        <input type="submit" name="<%= button_value  %>">
+</form>

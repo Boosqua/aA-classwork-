@@ -1,0 +1,19 @@
+<h1>Holy Shit so Many Subs!</h1>
+
+<% @subs.each do |sub| %>
+    <a href="<%= sub_url(sub) %>"> <h3><%= sub.title %> </h3></a>
+    <br>
+    <%= sub.description %>
+    <br>
+    <br>
+<% end %>
+<p>Want to Add a Sub?</p>
+<form action="<%= new_sub_url %>" method="POST">
+    <input type="hidden"
+        name="authenticity_token" 
+        value="<%= form_authenticity_token %>">
+    <input type="hidden" 
+        name="_method" 
+        value="GET">
+    <button>HELL YEAH</button>
+</form>

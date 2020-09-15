@@ -1,0 +1,21 @@
+
+<h1><%= @sub.title %></h1>
+
+
+
+    
+
+    <% @sub.posts.each do |post| %>
+
+        <h3><%= post.title %></h3>
+        <p><%= post.content %></p>
+        <br>
+        <p><%= post.author.username %></p>
+
+    <% end %>
+
+
+
+
+<a href="<%= edit_sub_url %>"> <%= "want to update #{@sub.title}?" %> </a>
+<a href="<%= new_sub_post_url(@sub) %>"> <%= "want to post to #{@sub.title}?" %> </a>

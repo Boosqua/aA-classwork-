@@ -8,6 +8,7 @@ describe("Piece", function () {
     lightPiece;
 
   beforeEach(function () {
+    // debugger 
     darkPiece = new Piece("black");
     lightPiece = new Piece("white");
   });
@@ -111,6 +112,7 @@ describe("Board", function () {
 
   describe('#isMine', function () {
     it('should return true when the retrieved piece matches the color', function () {
+      // debugger
       assert.equal(testBoard.isMine([3, 3], 'white'), true);
     });
 
@@ -214,6 +216,7 @@ describe("Board", function () {
 
     it("returns positions for longer horizontal and vertical cases ", function () {
       //long vertical cases
+      // debugger
       assert.equal(JSON.stringify(testBoardLongHorzDiagonal._positionsToFlip([1, 0], "white", [1, 0])), JSON.stringify([[2, 0], [3, 0], [4, 0]]));
       assert.equal(JSON.stringify(testBoardLongHorzDiagonal._positionsToFlip([5, 7], "white", [-1, 0])), JSON.stringify([[4, 7], [3, 7], [2, 7]]));
 
@@ -247,6 +250,7 @@ describe("Board", function () {
   });
 
   describe("#placePiece", function () {
+    
     it("should allow a player to make a valid move", function () {
       testBoard.placePiece([2, 3], "black");
       assert.equal(testBoard.grid[2][3].color, "black");
@@ -254,6 +258,7 @@ describe("Board", function () {
 
     it("should flip captured pieces", function () {
       testBoard.placePiece([2, 3], "black");
+      // debugger
       assert.equal(testBoard.grid[3][3].color, "black");
     });
 

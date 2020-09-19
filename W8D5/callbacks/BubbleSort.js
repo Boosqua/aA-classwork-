@@ -8,7 +8,7 @@ const reader = readline.createInterface({
 // Write this first.
 function askIfGreaterThan(el1, el2, callback) {
    // Prompt user to tell us whether el1 > el2; pass true back to the
-   // callback if true; else false.
+   // callback if true; else false.  
    reader.question(`Is ${el1} greater than ${el2}?\n`, function(yesNo) {
       if (yesNo === "yes" ) {
          callback(true);

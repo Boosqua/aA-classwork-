@@ -221,8 +221,18 @@ Board.prototype.isOver = function () {
  * Prints a string representation of the Board to the console.
  */
 Board.prototype.print = function () {
+   for( let i = 0; i < 8 ; i++ ) {
+      let printable = []
+      for( let j = 0; j < 8; j++ ) {
+         if ( this.grid[i][j] === undefined ) {
+            printable.push('_');
+         } else {
+            printable.push(this.grid[i][j]);
+         }
+      }
+      console.log(`${i}:${printable}`);
+   }
+   console.log('  0 1 2 3 4 5 6 7')
 };
-
-
 
 module.exports = Board;

@@ -29,7 +29,11 @@ Piece.prototype.flip = function () {
  * based on its color.
  */
 Piece.prototype.toString = function () {
-    return this.color[0].toUpperCase();
+    if( this.color === 'white' ) {
+       return '●';
+    } else {
+       return '○'
+    }
 };
 
 module.exports = Piece;

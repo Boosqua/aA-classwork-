@@ -2,7 +2,7 @@
 
 Function.prototype.inherits = function (parentClass, childClass) {
    const Surrogate= function() {};
-
+   debugger
    Surrogate.prototype = parentClass.prototype;
    childClass.prototype = new Surrogate();
 
@@ -13,23 +13,25 @@ Function.prototype.inherits = function (parentClass, childClass) {
 }
 
 
-class Dog {
-   constructor(name) {
-      this.name = name;
-   }
+function Dog(name) {
 
-   woof() {
+      this.name = name;
+   
+
+   this.woof = function() {
       console.log("woof");
    }
 }
 
-class Cat {
-   constructor(color) {
+function Cat(color) {
+   
       this.color = color;
-   }
+  
 }
 
 Function.inherits(Dog, Cat);
 
 console.log(Cat.prototype.__proto__ === Dog.prototype);
-
+console.log(Cat.prototype);
+console.log( Dog.prototype);
+new Dog('blue').woof()

@@ -208,8 +208,9 @@ module.exports = FollowToggle;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-const FollowToggle = __webpack_require__(/*! ./follow_toggle.js */ "./frontend/follow_toggle.js")
-const APIUtil = __webpack_require__(/*! ./api_util.js */ "./frontend/api_util.js")
+const FollowToggle = __webpack_require__(/*! ./follow_toggle.js */ "./frontend/follow_toggle.js");
+const APIUtil = __webpack_require__(/*! ./api_util.js */ "./frontend/api_util.js");
+const UsersSearch = __webpack_require__(/*! ./users_search.js */ "./frontend/users_search.js");
 
 // console.log('hello')
 
@@ -218,8 +219,28 @@ $(() => {
       // debugger
       new FollowToggle($(this), {});
    })
+
+   $('nav.users-search').each(function(index){
+      new UsersSearch($(this), {});
+   })
 })
 
+
+/***/ }),
+
+/***/ "./frontend/users_search.js":
+/*!**********************************!*\
+  !*** ./frontend/users_search.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+class UsersSearch {
+   constructor($el, options) {
+      this.$el = $el,
+      this.ul = $el.children( 'users' )
+   }
+}
 
 /***/ })
 

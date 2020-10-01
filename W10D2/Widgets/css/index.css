@@ -1,0 +1,43 @@
+.clock{
+	font-family: 'Oswald', sans-serif;
+	display: flex;
+	justify-content: center;
+	margin: auto;
+	align-items: center;
+	flex-direction: column;
+}
+
+.time-date{
+	background-color: orange;
+	color: white;
+	padding: 10px;
+	font-size: 25px;
+	border: black solid 2px;
+	font-weight: bold;
+	width: 400px;
+	height: 120px;
+}
+
+#time {
+	display: flex;
+	justify-content: space-between;
+	margin: 12px;
+}
+
+#date {
+	display: flex;
+	justify-content: space-between;
+	margin: 12px;
+}
+
+.clock-header > h1 {
+	font-weight: bold;
+	font-size: 30px;
+	margin: 20px 10px 10px 20px;
+	width: 400px;
+}
+
+.clock-header {
+	display: flex;
+	justify-content: flex-start;
+}

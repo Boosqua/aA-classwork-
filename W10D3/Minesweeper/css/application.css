@@ -1,0 +1,57 @@
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.game-bar{
+    display: flex;
+    margin: auto;
+    width: 300px;
+    height: 100px;
+    flex-direction: column;
+}
+.game-bar > h1{
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    align-items: center;
+    
+    width: 310px;
+    height: 30px;
+}
+
+.tile{
+    position: relative;
+    text-align: center;
+    background-color: darkgrey;
+    border-width: 3px;
+    border-style: outset;
+    
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.hidden:hover {
+    background-color: grey;
+}
+
+.shown{
+    border-style: inset;
+    background-color: gainsboro;
+
+}
+p > img {
+    max-width: 100%;
+    max-height: 15px;
+}
+p {
+    height: 20px;
+    font-size: 12px;
+    display: block;
+}

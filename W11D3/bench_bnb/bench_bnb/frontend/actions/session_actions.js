@@ -5,6 +5,7 @@ export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT-USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 export const receiveCurrentUser = (currentUser) =>{
+    // debugger
     return {
         type: RECEIVE_CURRENT_USER,
         currentUser
@@ -34,7 +35,7 @@ export const signup = (formUser) => (dispatch) => {
 };
 
 export const logout = () => (dispatch) => { //good working with you :D
-    return APIUtil.logout() // same!! just had to finish up our fail catches haha
+    return APIUtil.logout() // same!! just had to finish up our fail catches 
         .then(() => {dispatch(logoutCurrentUser())})
         .fail((errors) => {dispatch(receiveErrors(errors))});
 };
@@ -42,7 +43,7 @@ export const logout = () => (dispatch) => { //good working with you :D
 export const login = formUser => (dispatch) => {
     return(
         APIUtil.login(formUser)
-        .then((user)=>{dispatch(receiveCurrentUser(user))})
+        .then((user)=> {dispatch(receiveCurrentUser(user))})
         .fail((errors) => {dispatch(receiveErrors(errors))})
-    );
-};
+    )
+}

@@ -3,6 +3,15 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <% if  logged_in? %>
+      <script>
+         window.currentUser = <%= render(
+            "api/users/user.json.jbuilder",
+            user: current_user
+         ).html_safe %>
+      </script>
+   <% end %>
+
    <title>Document</title>
 </head>
 <body>

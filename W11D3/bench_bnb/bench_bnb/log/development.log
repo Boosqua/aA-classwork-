@@ -1,0 +1,347 @@
+  [1m[35m (66.3ms)[0m  [1m[35mCREATE DATABASE "bench_bnb_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (52.7ms)[0m  [1m[35mCREATE DATABASE "bench_bnb_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE DATABASE "bench_bnb_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE DATABASE "bench_bnb_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-10-07 14:21:16 -0700
+
+ActionController::RoutingError - uninitialized constant StaticPagesController:
+
+Started POST "/__better_errors/52ebaba7f0b6a97e/variables" for ::1 at 2020-10-07 14:21:17 -0700
+Started GET "/" for ::1 at 2020-10-07 14:21:22 -0700
+
+ActionController::RoutingError - uninitialized constant StaticPagesController:
+
+Started POST "/__better_errors/9c00e5cca77acaea/variables" for ::1 at 2020-10-07 14:21:22 -0700
+Started GET "/" for ::1 at 2020-10-07 14:28:09 -0700
+
+AbstractController::ActionNotFound - The action 'root' could not be found for StaticPagesController:
+
+Started POST "/__better_errors/267a559e4aa6462b/variables" for ::1 at 2020-10-07 14:28:09 -0700
+Started GET "/" for ::1 at 2020-10-07 14:28:30 -0700
+Processing by StaticPagesController#root as HTML
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template static_pages/root, application/root with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/omarhernandez/Desktop/bench_bnb/bench_bnb/app/views":
+  app/controllers/static_pages_controller.rb:4:in `root'
+
+Started POST "/__better_errors/7f13ea3d6b4a51ec/variables" for ::1 at 2020-10-07 14:28:30 -0700
+Started GET "/" for ::1 at 2020-10-07 14:29:07 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 1576ms (Views: 1575.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-10-07 14:31:02 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 920ms (Views: 919.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-10-07 14:31:24 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 32ms (Views: 31.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-07 14:35:41 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 32ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/users" for ::1 at 2020-10-07 15:06:22 -0700
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+        bin/rails db:migrate RAILS_ENV=development:
+
+Started GET "/api/users" for ::1 at 2020-10-07 15:06:57 -0700
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+        bin/rails db:migrate RAILS_ENV=development:
+
+Started GET "/" for 127.0.0.1 at 2020-10-07 15:07:02 -0700
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+        bin/rails db:migrate RAILS_ENV=development:
+
+  [1m[35m (23.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6802361601607853190)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20201007213912)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20201007213912_create_users.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/migrate/20201007213912_create_users.rb:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201007213912"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-07 22:07:20.481958"], ["updated_at", "2020-10-07 22:07:20.481958"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6802361601607853190)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started POST "/api/users?user[username]=Boosqua&user[password]=[FILTERED]" for ::1 at 2020-10-07 15:07:58 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/omarhernandez/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by Api::UsersController#create as */*
+  Parameters: {"cats"=>{"name"=>"Kevin", "birth_date"=>"10-11-2011", "gender"=>"M", "color"=>"black", "description"=>"Hiker"}, "user"=>{"username"=>"Boosqua", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/api/users?username=hello1&password=[FILTERED]" for 127.0.0.1 at 2020-10-07 15:09:10 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"username"=>"hello1", "password"=>"[FILTERED]"}
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:16:in `user_params'
+  app/controllers/api/users_controller.rb:4:in `create'
+
+Started POST "/api/users?user[username]=Boosqua&user[password]=[FILTERED]" for ::1 at 2020-10-07 15:09:11 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"cats"=>{"name"=>"Kevin", "birth_date"=>"10-11-2011", "gender"=>"M", "color"=>"black", "description"=>"Hiker"}, "user"=>{"username"=>"Boosqua", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 8.3ms)
+
+
+
+ActiveModel::UnknownAttributeError - unknown attribute 'password' for User.:
+  app/controllers/api/users_controller.rb:4:in `create'
+
+Started POST "/api/users?user[username]=Boosqua&user[password]=[FILTERED]" for ::1 at 2020-10-07 15:10:13 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"cats"=>{"name"=>"Kevin", "birth_date"=>"10-11-2011", "gender"=>"M", "color"=>"black", "description"=>"Hiker"}, "user"=>{"username"=>"Boosqua", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 4.7ms)
+
+
+
+ActiveModel::UnknownAttributeError - unknown attribute 'password' for User.:
+  app/controllers/api/users_controller.rb:4:in `create'
+
+Started POST "/api/users?user[username]=Boosqua&user[password]=[FILTERED]" for ::1 at 2020-10-07 15:10:19 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"cats"=>{"name"=>"Kevin", "birth_date"=>"10-11-2011", "gender"=>"M", "color"=>"black", "description"=>"Hiker"}, "user"=>{"username"=>"Boosqua", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+
+ActiveModel::UnknownAttributeError - unknown attribute 'password' for User.:
+  app/controllers/api/users_controller.rb:4:in `create'
+
+Started POST "/api/users?username=hello1&password=[FILTERED]" for 127.0.0.1 at 2020-10-07 15:10:20 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"username"=>"hello1", "password"=>"[FILTERED]"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:16:in `user_params'
+  app/controllers/api/users_controller.rb:4:in `create'
+
+Started POST "/api/users?user[username]=hello1&user[password]=[FILTERED]" for 127.0.0.1 at 2020-10-07 15:10:51 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"hello1", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActiveModel::UnknownAttributeError - unknown attribute 'password' for User.:
+  app/controllers/api/users_controller.rb:4:in `create'
+
+Started POST "/api/users?user[username]=Boosqua&user[password]=[FILTERED]" for ::1 at 2020-10-07 15:11:01 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"cats"=>{"name"=>"Kevin", "birth_date"=>"10-11-2011", "gender"=>"M", "color"=>"black", "description"=>"Hiker"}, "user"=>{"username"=>"Boosqua", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 68608ms (ActiveRecord: 7.8ms)
+
+
+
+ActiveModel::UnknownAttributeError - unknown attribute 'password' for User.:
+  app/controllers/api/users_controller.rb:5:in `create'
+
+Started POST "/api/users?user[username]=hello1&user[password]=[FILTERED]" for 127.0.0.1 at 2020-10-07 15:13:55 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"hello1", "password"=>"[FILTERED]"}}
+Started POST "/api/users?user[username]=Boosqua&user[password]=[FILTERED]" for ::1 at 2020-10-07 15:13:56 -0700
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "hello1"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "hello1"], ["password_digest", "$2a$12$iNis088oppAcPpPmx41WAOgf3td36n/RWTKRZ3bQsneXM/n11rCy."], ["session_token", "XhtDhtFRQUGe4wyuFbWDaw"], ["created_at", "2020-10-07 22:13:56.085594"], ["updated_at", "2020-10-07 22:13:56.085594"]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 200 OK in 304ms (Views: 0.6ms | ActiveRecord: 10.3ms)
+
+
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"Boosqua", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Boosqua"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Boosqua"], ["password_digest", "$2a$12$mM4BS6LQ.Z50H7Qf/ExraOzVsYwYZmrzpRe1yXqDQkH3kMuV.YNjS"], ["session_token", "HVKZF9YtPrCZu1RGRvSjAA"], ["created_at", "2020-10-07 22:13:56.393222"], ["updated_at", "2020-10-07 22:13:56.393222"]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 200 OK in 286ms (Views: 0.8ms | ActiveRecord: 6.6ms)
+
+
+Started POST "/api/session?user[username]=Boosqua&user[password]=[FILTERED]" for ::1 at 2020-10-07 15:14:39 -0700
+
+SyntaxError - syntax error, unexpected tLABEL
+         render json: status: 404
+                      ^~~~~~~:
+  app/controllers/api/sessions_controller.rb:17:in `'
+
+Started POST "/api/session?user[username]=Hello1&user[password]=[FILTERED]" for 127.0.0.1 at 2020-10-07 15:15:20 -0700
+
+SyntaxError - syntax error, unexpected tLABEL
+         render json: status: 404
+                      ^~~~~~~:
+  app/controllers/api/sessions_controller.rb:17:in `'
+
+Started POST "/api/session?user[username]=Boosqua&user[password]=[FILTERED]" for ::1 at 2020-10-07 15:15:39 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"username"=>"Boosqua", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Boosqua"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+Completed 200 OK in 292ms (Views: 0.5ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/api/session?user[username]=Hello1&user[password]=[FILTERED]" for 127.0.0.1 at 2020-10-07 15:15:47 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"username"=>"Hello1", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Hello1"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/session?user[username]=Boosqua&user[password]=[FILTERED]" for ::1 at 2020-10-07 15:16:21 -0700
+Processing by Api::SessionsController#destroy as */*
+  Parameters: {"user"=>{"username"=>"Boosqua", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+
+ActiveRecord::StatementInvalid - PG::UndefinedColumn: ERROR:  column users.session does not exist
+LINE 1: SELECT  "users".* FROM "users" WHERE "users"."session" = $1 ...
+                                             ^
+: SELECT  "users".* FROM "users" WHERE "users"."session" = $1 LIMIT $2:
+  app/controllers/application_controller.rb:21:in `current_user'
+  app/controllers/api/sessions_controller.rb:13:in `destroy'
+
+Started POST "/api/session?user[username]=Hello1&user[password]=[FILTERED]" for 127.0.0.1 at 2020-10-07 15:16:50 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"username"=>"Hello1", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Hello1"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/session?user[username]=Boosqua&user[password]=[FILTERED]" for ::1 at 2020-10-07 15:17:30 -0700
+Processing by Api::SessionsController#destroy as */*
+  Parameters: {"user"=>{"username"=>"Boosqua", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "HVKZF9YtPrCZu1RGRvSjAA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 6.5ms)
+
+
+
+NoMethodError - undefined method `reset_session_token!' for #<User:0x00007faa431829d8>
+Did you mean?  reset_sesion_token!
+               restore_session_token!:
+  app/controllers/application_controller.rb:10:in `logout!'
+  app/controllers/api/sessions_controller.rb:14:in `destroy'
+
+Started DELETE "/api/session?user[username]=Boosqua&user[password]=[FILTERED]" for ::1 at 2020-10-07 15:17:44 -0700
+Processing by Api::SessionsController#destroy as */*
+  Parameters: {"user"=>{"username"=>"Boosqua", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "HVKZF9YtPrCZu1RGRvSjAA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 5.3ms)
+
+
+
+NoMethodError - undefined method `reset_session_token!' for #<User:0x00007faa4c26eff0>
+Did you mean?  reset_sesion_token!
+               restore_session_token!:
+  app/controllers/application_controller.rb:10:in `logout!'
+  app/controllers/api/sessions_controller.rb:14:in `destroy'
+
+Started DELETE "/api/session?user[username]=Boosqua&user[password]=[FILTERED]" for ::1 at 2020-10-07 15:18:00 -0700
+Processing by Api::SessionsController#destroy as */*
+  Parameters: {"user"=>{"username"=>"Boosqua", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "HVKZF9YtPrCZu1RGRvSjAA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Boosqua"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "LxEZqCTDZPg-RztQCplHmQ"], ["updated_at", "2020-10-07 22:18:00.304766"], ["id", 2]]
+  ↳ app/models/user.rb:31
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+Completed 200 OK in 22ms (Views: 0.1ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/api/users?user[username]=hellohello&user[password]=[FILTERED]" for 127.0.0.1 at 2020-10-07 15:18:05 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"hellohello", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "hellohello"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "hellohello"], ["password_digest", "$2a$12$riKEBkiG11xLGwMtINRFJO3ITsziK5G2XyRIcA3vcaWG2vQQJXOVq"], ["session_token", "VWSZypjjNv6XEtgR1GzfUA"], ["created_at", "2020-10-07 22:18:05.800483"], ["updated_at", "2020-10-07 22:18:05.800483"]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 200 OK in 265ms (Views: 0.3ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/api/session?user[username]=hellohello&user[password]=[FILTERED]" for 127.0.0.1 at 2020-10-07 15:18:49 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"username"=>"hellohello", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "hellohello"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+Completed 200 OK in 263ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-10-07 15:28:39 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 316ms (Views: 316.0ms | ActiveRecord: 0.0ms)
+
+

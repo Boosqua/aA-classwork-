@@ -38,7 +38,10 @@ class TodoForm extends React.Component {
     }
 
     updateDone(e){
-        this.setState({ done: e.target.value }) 
+        debugger
+        this.setState({ done: e.target.value === "true" ?
+            true :
+            false }) 
     }
     
     render() {
@@ -59,14 +62,14 @@ class TodoForm extends React.Component {
                      <input 
                         type="radio" 
                         value="true" 
-                        defaultChecked={this.state.done ? "checked" : ""}
+                        checked={this.state.done ? "checked" : ""}
                         onChange={this.updateDone}/>
                   </label>
                   <label>false
                      <input 
                         type="radio" 
                         value="false" 
-                        defaultChecked={this.state.done ? "" : "checked"}
+                        checked={this.state.done ? "" : "checked"}
                         onChange={this.updateDone}/>
                   </label>
 

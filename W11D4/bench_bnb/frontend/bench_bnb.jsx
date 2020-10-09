@@ -9,6 +9,7 @@ import {
   signup
 } from "./util/session_api_util"
 import { receiveCurrentUser } from './actions/session_actions'
+import { fetchBenches } from './actions/bench_actions'
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -30,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Test 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  window.fetchBenches = fetchBenches;
   //Test End 
 
   const root = document.getElementById("root");

@@ -8,13 +8,15 @@ export default class BenchIndex extends React.Component {
 
    componentDidMount() {
       // debugger
-      let that = this
-      this.props.fetchBenches()
+      // let that = this
+      // this.props.fetchBenches()
    }
 
-   showBenches(){
+   showBenches(){ 
+      // debugger
       let benches = Object.values(this.props.benches);
-      benches = benches ? benches : [];
+      // benches = benches ? benches : [];
+
       return benches.map((bench) => {
          return (
             <li key={bench.id}>{bench.id}:
@@ -30,7 +32,6 @@ export default class BenchIndex extends React.Component {
    render(){
       return (
          <div className="all-benches">
-            <h1>Consider these benches if you're in San Francisco!</h1>
             <ul className="bench-list">
                {this.showBenches()}
             </ul>

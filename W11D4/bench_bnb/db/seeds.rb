@@ -7,8 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Bench.create([
-   {description: 'Jefferson Park Bench', lng: 37.782243, lat: -122.425792},
-   {description: 'Golden Gate Park Bench', lng: 37.771111, lat: -122.458287},
+   {description: 'Jefferson Park Bench', lat: 37.782243, lng: -122.425792},
+   {description: 'Golden Gate Park Bench', lat: 37.771111, lng: -122.458287},
    {description: 'Saw a hobo sleeping here. Looked comfy!',
-   lng: 37.783697, lat: -122.416086}
+   lat: 37.783697, lng: -122.416086}
 ])
+
+User.create(username: 'boosqua', password: 'password')
